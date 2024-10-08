@@ -29,7 +29,7 @@ const Input: React.FC<InputProps> = ({
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}
-                className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="w-full pl-10 py-2 text-black bg-transparent border-b border-black placeholder-black focus:outline-none focus:border-black"
                 />
         </div>
     );
