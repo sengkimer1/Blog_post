@@ -63,50 +63,46 @@ const CreateAccountForm: React.FC = () => {
         backgroundImage: `URL(${img.src})`,
       }}
     >
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
-        <h2 className="text-3xl font-bold mb-4 text-center">Welcome to Blog Post</h2>
-        <h3 className="text-1xl font-bold mb-6 text-center">Create New Account</h3>
+      <div className="bg-white shadow-lg rounded-lg p-10 w-[500px] h-[660px] max-sm:w-[400px] ">
+        <h2 className="text-3xl font-bold mb-8 text-center">Create Account</h2>
+        <h3 className="text-5 mb-10 text-center">Let’s get a start Create account with Name for using</h3>
 
-        <form className="space-y-5" onSubmit={handleSubmit}>
+        <form className="space-y-[10%]" onSubmit={handleSubmit}>
         <div className="relative ">
-        <FaUser className="absolute left-3 top-11 transform -translate-y-1/2 text-black" />
+        <FaUser className="absolute left-3 top-5 transform -translate-y-1/2 text-black" />
           <Input
-            label="Last Name"
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
-            placeholder="Enter your last name"
+            placeholder="LAST NAME"
             className="my-custom-class"
           /></div>
              <div className="relative ">
-             <FaRegUser className="absolute left-3 top-11 transform -translate-y-1/2 text-black" />
+             <FaRegUser className="absolute left-3 top-5 transform -translate-y-1/2 text-black" />
           <Input
-            label="First Name"
             name="firstName"
             value={formData.firstName}
             onChange={handleChange}
-            placeholder="Enter your first name"
+            placeholder="FIRST NAME"
             className="my-custom-class"
           /></div>
             <div className="relative ">
-            <FaVoicemail className="absolute left-3 top-11 transform -translate-y-1/2 text-black" />
+            <FaVoicemail className="absolute left-3 top-5 transform -translate-y-1/2 text-black" />
           <Input
-            label="Email"
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="Enter your email"
+            placeholder="EMAIL"
             className="my-custom-class"
           /></div>
           <div className="relative ">
-          <FaLock className="absolute left-3 top-11 transform -translate-y-1/2 text-black" />
+          <FaLock className="absolute left-3 top-5 transform -translate-y-1/2 text-black" />
           <Input
-            label="Password"
             name="password"
             type="password"
             value={formData.password}
             onChange={handleChange}
-            placeholder="Enter your password"
+            placeholder="PASSWORD"
             className="my-custom-class"
           /></div>
 
@@ -115,7 +111,7 @@ const CreateAccountForm: React.FC = () => {
             className="w-full bg-indigo-600 text-white py-2 rounded-md font-medium hover:bg-indigo-700 transition-colors"
             disabled={loading}
           >
-            {loading ? 'Creating Account...' : 'Create Account'}
+            {loading ? 'Creating Account...' : 'Create New Account'}
           </button>
         </form>
 
