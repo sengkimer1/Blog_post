@@ -55,7 +55,7 @@ function Login() {
       }}
     >
       <div className="flex items-center justify-center min-h-screen bg-cover bg-center">
-        <div className="w-[500px] h-[660px] p-10 space-y-[10%] bg-white rounded-lg shadow-lg">
+        <div className="w-[500px] h-[660px] max-sm:w-[400px] p-10 space-y-[10%] bg-white rounded-lg shadow-lg">
           <div className="text-center">
             <h2 className="text-2xl font-bold text-black">LOGIN</h2>
           </div>
