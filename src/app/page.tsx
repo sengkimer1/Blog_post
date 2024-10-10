@@ -1,9 +1,12 @@
-import React from 'react'
+import BlogForm from '@/components/Create-blog';
 
-function Home() {
+const CreateBlog = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div className="max-w-xl mx-auto mt-10">
+      <h1 className="text-2xl font-bold mb-6">Create a New Blog Post</h1>
+      <BlogForm />
+    </div>
+  );
+};
 
-export default Home
+export default CreateBlog;
