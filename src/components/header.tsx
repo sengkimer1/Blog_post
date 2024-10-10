@@ -27,26 +27,27 @@ const Header: React.FC = () => {
 
         <ul className="flex space-x-10 text-xl mr-12">
           {token ? (
-            <>
-              <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/profile">Profile</Link>
-            </li>
-            <li>
-              <Link href="/">Logout</Link>
-            </li>
-            </>
+             <>
+             <li>
+               <Link href="/signup">Signup</Link>
+             </li>
+             <li>
+               <Link href="/login">Login</Link>
+             </li>
+           </>
           ) : (
-            <>
-              <li>
-                <Link href="/signup">Signup</Link>
-              </li>
-              <li>
-                <Link href="/login">Login</Link>
-              </li>
-            </>
+          
+             <>
+             <li>
+             <Link href="/">Home</Link>
+           </li>
+           <li>
+             <Link href="/profile">Profile</Link>
+           </li>
+           <li>
+             <Link href="/">Logout</Link>
+           </li>
+           </>
           )}
         </ul>
       </nav>
