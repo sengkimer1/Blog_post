@@ -22,7 +22,7 @@ const Button: FC<ButtonProps> = ({
     return (
         <div className="flex flex-col text-center gap-4">
             <button
-                className={`w-full py-2 font-bold text-blue-600 bg-white rounded focus:outline-none focus:shadow-outline ${className}`}
+                className={`w-full p-2 font-bold text-blue-600 rounded focus:outline-none focus:shadow-outline ${className}`}
                 type={type}
                 onClick={onClick}
                 disabled={loading}
