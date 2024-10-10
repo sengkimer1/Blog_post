@@ -22,7 +22,7 @@ const Button: FC<ButtonProps> = ({
     return (
         <div className="flex flex-col text-center gap-4">
             <button
-                className={`w-full p-2 font-bold text-blue-600 rounded focus:outline-none focus:shadow-outline ${className}`}
+                className={`w-full py-2 font-bold text-white bg-black rounded focus:outline-none focus:shadow-outline ${className}`}
                 type={type}
                 onClick={onClick}
                 disabled={loading}
@@ -31,7 +31,7 @@ const Button: FC<ButtonProps> = ({
                 {loading ? "Logging in..." : children}
             </button>
             <div className="text-sm">
-                {error && <p style={{ color: 'white' }}>{error}</p>}
+                {error && <p style={{ color: 'red' }}>{error}</p>}
             </div>
         </div>
     );
