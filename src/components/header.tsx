@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/images/logo_blog.png';
+import img from '@/images/background.png';
 
 const Header: React.FC = () => {
   const [token, setToken] = useState<string | null>(null);
@@ -13,45 +14,93 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <header className="bg-blue-600 p-4 text-white">
+    <header className="p-4 md:p-6 shadow-md text-white fixed top-0 left-0 right-0"
+    style={{
+      backgroundImage: `URL(${img.src})`,
+    }}
+    >
       <nav className="flex justify-between items-center">
-        <div>
+        <div className="flex items-center">
           <Link href="/" passHref>
             <Image
-              className="rounded-full w-8 sm:w-14 transition-transform duration-300 transform hover:scale-110"
+              className="rounded-full w-10 md:w-14 transition-transform duration-300 transform hover:scale-110"
               src={logo}
               alt="Blog Logo"
             />
           </Link>
         </div>
+        <div>
+            <button
+                className={`px-6 py-2 text-white font-bold mt-5 rounded-full border-solid border-2 border-whitetransform transition-transform hover:-rotate-2`}
+            >
+              CREATE BLOG
+            </button>
+        </div>
 
-        <ul className="flex space-x-10 text-xl mr-12">
+        <ul className="hidden md:flex space-x-6 text-lg mr-4">
           {token ? (
             <>
-              <li>
-              <Link href="/">Home</Link>
-            </li>
-            <li>
-              <Link href="/profile">Profile</Link>
-            </li>
-            <li>
-              <Link href="/">Logout</Link>
-            </li>
+              <li className="hover:text-gray-200 transition-colors duration-200">
+                <Link href="/">Home</Link>
+              </li>
+              <li className="hover:text-gray-200 transition-colors duration-200">
+                <Link href="/profile">Profile</Link>
+              </li>
+              <li className="hover:text-gray-200 transition-colors duration-200">
+                <Link href="/">Logout</Link> 
+              </li>
             </>
           ) : (
             <>
-              <li>
+              <li className="hover:text-gray-200 transition-colors duration-200">
                 <Link href="/signup">Signup</Link>
               </li>
-              <li>
+              <li className="hover:text-gray-200 transition-colors duration-200">
                 <Link href="/login">Login</Link>
               </li>
             </>
           )}
         </ul>
+
+        <div className="md:hidden">
+          <button className="text-white focus:outline-none">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile Menu */}
+      <div className="md:hidden mt-4">
+        <ul className="space-y-4 text-lg">
+          {token ? (
+            <>
+              <li className="hover:text-gray-200 transition-colors duration-200">
+                <Link href="/">Home</Link>
+              </li>
+              <li className="hover:text-gray-200 transition-colors duration-200">
+                <Link href="/profile">Profile</Link>
+              </li>
+              <li className="hover:text-gray-200 transition-colors duration-200">
+                <Link href="/">Logout</Link>
+              </li>
+            </>
+          ) : (
+            <>
+              <li className="hover:text-gray-200 transition-colors duration-200">
+                <Link href="/signup">Signup</Link>
+              </li>
+              <li className="hover:text-gray-200 transition-colors duration-200">
+                <Link href="/login">Login</Link>
+              </li>
+            </>
+          )}
+        </ul>
+      </div>
     </header>
   );
 };
 
 export default Header;
+
