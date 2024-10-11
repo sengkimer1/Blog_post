@@ -31,7 +31,7 @@ const Header: React.FC = () => {
         </div>
         <div>
             <button
-                className={`px-6 py-2 text-white font-bold mt-5 rounded-full border-solid border-2 border-whitetransform transition-transform hover:-rotate-2`}
+                className={`px-6 py-2 text-white font-bold mt-2 rounded-full border-solid border-2 border-whitetransform transition-transform hover:-rotate-2`}
             >
               CREATE BLOG
             </button>
@@ -41,13 +41,13 @@ const Header: React.FC = () => {
           {token ? (
             <>
               <li className="hover:text-gray-200 transition-colors duration-200">
-                <Link href="/">Home</Link>
+                <Link href="/">HOME</Link>
               </li>
               <li className="hover:text-gray-200 transition-colors duration-200">
-                <Link href="/profile">Profile</Link>
+                <Link href="/profile">PROFILE</Link>
               </li>
               <li className="hover:text-gray-200 transition-colors duration-200">
-                <Link href="/">Logout</Link> 
+                <Link href="/">LOGOUT</Link> 
               </li>
             </>
           ) : (

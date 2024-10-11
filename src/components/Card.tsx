@@ -8,23 +8,12 @@ interface CardProps {
   description: string;
   firstname: string;
   lastname: string;
+  date: string;
 }
 
-const Card: React.FC<CardProps> = ({ image, image1, firstname, lastname, title, description }) => {
+const Card: React.FC<CardProps> = ({ image,date, image1, firstname, lastname, title, description }) => {
   return (
     <div className="w-full h-[100%] shadow-lg bg-white">
-      <div className='flex'>
-        <div className='flex-1'>
-          <img className="object-cover" src={image1} alt={title} />
-        </div>
-        <div className='flex-1'>
-          <div className='flex gap-5 mt-6 justify-start'>
-            <p>{firstname}</p>
-            <p>{lastname}</p>
-          </div>
-
-        </div>
-      </div>
       <div className='w-full p-5'>
         <img className="object-cover" src={image} alt={title} />
       </div>
@@ -35,10 +24,25 @@ const Card: React.FC<CardProps> = ({ image, image1, firstname, lastname, title, 
           {description}
         </p>
       </div>
-      <div className='flex gap-10 p-5'>
-        <CardButton label='Update' className='bg-transparent border-2 border-green-500' />
-        <CardButton label='Delete' className='bg-transparent border-2 border-red-500' />
+      <div className='flex'>
+        <div className='flex-2 p-5 '>
+          <img className="object-cover w-[60px] h-[60px]" src={image1} alt={title} />
+        </div>
+        <div className='flex-1'>
+          <h5 className='mt-8'>Author</h5>
+          <div className='flex gap-2 text-blue-600  justify-start'>
+            <p>{firstname}</p>
+            <p>{lastname}</p>
+          </div>
+        </div>
+        <div className='flex-1 flex justify-center items-center mt-4'>
+          <div className='text-[12px] bg-slate-300 py-2 px-2 rounded'>
+            <p>{date}</p>
+          </div>
+        </div>
+        
       </div>
+      
     </div>
   );
 };
