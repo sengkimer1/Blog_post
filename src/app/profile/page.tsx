@@ -46,6 +46,8 @@ const ProfilePage = () => {
 
             } catch (err) {
                 setError('Failed to fetch user data.');
+                console.error(err);
+
             } finally {
                 setLoading(false);
             }
@@ -111,6 +113,7 @@ const ProfilePage = () => {
             router.push('/profile'); 
         } catch (err) {
             setError('Failed to update profile.');
+            console.error(err);
         } finally {
             setLoading(false);
         }

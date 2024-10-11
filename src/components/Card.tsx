@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link'; // Import Link component
-import CardButton from './CardButton';
 
 interface CardProps {
   image: string;

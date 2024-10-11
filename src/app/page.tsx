@@ -72,9 +72,9 @@ export default function Home() {
             <p className='text-[20px] text-white max-sm:text-[18px]'>
               Ready to dive into a world where ideas come alive and curiosity never sleeps?
               Whether you're here for a dose of inspiration, practical tips, or just a few moments of fun,
-              you’re in the right place. Get cozy, grab your favorite drink,
-              and let’s explore a story that’s bound to leave you thinking long after you’ve finished reading.
-              Let’s make this time together unforgettable!
+              you&#39re in the right place. Get cozy, grab your favorite drink,
+              and let&#39s explore a story that&#39s bound to leave you thinking long after you&#39ve finished reading.
+              Let&#39s make this time together unforgettable!
             </p>
             <div className='flex fixed top-0 w-[20%]'>
             <button
