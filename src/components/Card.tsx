@@ -1,18 +1,50 @@
 import React from 'react';
+import CardButton from './CardButton';
+
 interface CardProps {
-    thumbnail: string;
-    title: string;
-    desc: string;
-  }
-  
-  const Card: React.FC<CardProps> = ({ thumbnail, title, desc }) => (
-    <div className="bg-white rounded shadow p-4">
-      <img src={thumbnail} alt={title} className="w-full h-40 object-cover rounded" />
-      <h2 className="font-bold text-lg mt-2">{title}</h2>
-      <p className="mt-1 text-gray-700">{desc}</p>
+  image: string;
+  title: string;
+  image1: string;
+  description: string;
+  firstname: string;
+  lastname: string;
+  date: string;
+}
+
+const Card: React.FC<CardProps> = ({ image,date, image1, firstname, lastname, title, description }) => {
+  return (
+    <div className="w-full h-[100%] shadow-lg bg-white">
+      <div className='w-full p-5'>
+        <img className="object-cover" src={image} alt={title} />
+      </div>
+
+      <div className="px-6 py-6">
+        <div className="font-bold text-xl mb-2">{title}</div>
+        <p className="text-gray-700 text-base mt-2">
+          {description}
+        </p>
+      </div>
+      <div className='flex'>
+        <div className='flex-2 p-5 '>
+          <img className="object-cover w-[60px] h-[60px]" src={image1} alt={title} />
+        </div>
+        <div className='flex-1'>
+          <h5 className='mt-8'>Author</h5>
+          <div className='flex gap-2 text-blue-600  justify-start'>
+            <p>{firstname}</p>
+            <p>{lastname}</p>
+          </div>
+        </div>
+        <div className='flex-1 flex justify-center items-center mt-4'>
+          <div className='text-[12px] bg-slate-300 py-2 px-2 rounded'>
+            <p>{date}</p>
+          </div>
+        </div>
+        
+      </div>
       
     </div>
   );
-  
+};
 
 export default Card;
