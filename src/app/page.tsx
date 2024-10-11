@@ -61,7 +61,7 @@ export default function Home() {
       }}
     >
       <Header />
-      <div className='flex max-sm:flex-col max-sm:mt-[20%]'>
+      <div className='flex max-sm:flex-col max-sm:mt-[20%] sm:px-4'>
         <div className='flex-1 h-[415px] flex ml-[80px] mt-5 max-sm:ml-[20px] items-center'>
           <h1 className='text-[3rem] max-sm:text-[28px] text-white font-bold uppercase'>
             Behind the Scenes: <br />How We Made Blog <br /> Post Work for Us
@@ -119,4 +119,3 @@ export default function Home() {
     </div>
   );
 }
-

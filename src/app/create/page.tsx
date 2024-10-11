@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import img from '@/images/background.png';
+import Button from '@/components/Button'
+import { useRouter } from 'next/navigation';
 
 
 const BlogForm = () => {
@@ -12,6 +14,7 @@ const BlogForm = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
+    const router = useRouter();
 
     const handleImageChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         setLoading(true);
@@ -89,7 +92,9 @@ const BlogForm = () => {
             setLoading(false);
         }
     };
-
+    const handleBack = () => {
+        router.push('/');
+      };
     return (
         <div
         className="flex items-center justify-center bg-cover bg-center "
@@ -155,6 +160,12 @@ const BlogForm = () => {
                         {loading ? 'Creating...' : 'Create Blog Post'}
                     </button>
                 </form>
+                <div className="flex justify-start mt-4 max-w-5xl ">
+    <Button onClick={handleBack} loading={loading} className="px-4 py-2 bg-blue-500 text-white rounded">
+     Back
+    </Button>
+  </div>
+
             </div>
         </div>
          </div>
