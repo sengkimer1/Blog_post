@@ -20,13 +20,13 @@ interface BlogData {
 
 export default function Home() {
   const [blogData, setBlogData] = useState<BlogData[]>([]);
-  const [loading, setLoading] = useState(false); // State to track loading status
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const fetchBlogData = async (url: string) => {
     try {
-      setLoading(true); // Set loading to true when the request starts
-      setError(null); // Reset error state before fetching
+      setLoading(true);
+      setError(null);
       const token = localStorage.getItem('token');
       const res = await fetch(url, {
         method: 'GET',
@@ -45,7 +45,7 @@ export default function Home() {
       console.error('Error fetching blog data:', error);
       setError('Failed to fetch blog data');
     } finally {
-      setLoading(false); // Set loading to false once data is fetched
+      setLoading(false);
     }
   };
 
@@ -93,20 +93,14 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Display loading state with a blue background */}
       {loading && (
         <div className="fixed inset-0 flex items-center justify-center bg-blue-800 bg-opacity-75 text-white">
           <p className="text-2xl font-bold">Loading...</p>
         </div>
       )}
-
-      {/* Display error message if there's an error */}
       {error && !loading && (
         <p className="text-red-500 text-center mt-4">{error}</p>
       )}
-
-      {/* Display blogs once loading is complete */}
       <div className='grid grid-cols-5 mt-[5%] gap-5 container mx-auto max-sm:mt-[15.5%] max-sm:grid-cols-1 max-md:grid-cols-2 max-lg:grid-cols-3'>
         {blogData.map((blog, index) => (
           <div key={index} className="flex justify-center">
@@ -125,3 +119,4 @@ export default function Home() {
     </div>
   );
 }
+
