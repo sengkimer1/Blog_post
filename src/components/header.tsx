@@ -4,9 +4,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 import logo from '@/images/logo_blog.png';
 import img from '@/images/background.png';
+import { useRouter } from 'next/navigation';
 
 const Header: React.FC = () => {
   const [token, setToken] = useState<string | null>(null);
+  const router = useRouter();
+
+  const handleCreateBlog = () => {
+    router.push('/create'); 
+  };
+
 
   useEffect(() => {
     const savedToken = localStorage.getItem('token');
@@ -30,11 +37,12 @@ const Header: React.FC = () => {
           </Link>
         </div>
         <div>
-            <button
-                className={`px-6 py-2 text-white font-bold mt-2 rounded-full border-solid border-2 border-whitetransform transition-transform hover:-rotate-2`}
-            >
-              CREATE BLOG
-            </button>
+        <button
+        onClick={handleCreateBlog} 
+        className="px-6 py-2 text-white font-bold mt-2 rounded-full border-solid border-2 border-white transform transition-transform hover:-rotate-2"
+      >
+        CREATE BLOG
+      </button>
         </div>
 
         <ul className="hidden md:flex space-x-6 text-lg mr-4">
