@@ -10,6 +10,7 @@ interface BlogData {
   thumbnail: string;
   title: string;
   desc: string;
+  _id:string;
   createdBy: {
     avatar: string;
     firstName: string;
@@ -111,8 +112,7 @@ export default function Home() {
               image1={blog.createdBy.avatar}
               firstname={blog.createdBy.firstName}
               lastname={blog.createdBy.lastName.substring(0, 7)}
-              date={dayjs(blog.createdBy.createdAt).format('YYYY-MM-DD')}
-            />
+              date={dayjs(blog.createdBy.createdAt).format('YYYY-MM-DD')} id={blog._id}            />
           </div>
         ))}
       </div>

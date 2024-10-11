@@ -177,7 +177,7 @@ const ProfilePage = () => {
                             <img
                                 src={profileImage}
                                 alt="Profile"
-                                className="w-full h-full rounded-full object-cover border-4 border-blue-500"
+                                className="w-full h-fullgood rounded-full object-cover border-4 border-blue-500"
                             />
                         ) : (
                             <div className="w-full h-full bg-gray-300 rounded-full flex items-center justify-center border-4 border-gray-400">
@@ -250,7 +250,7 @@ const ProfilePage = () => {
                         <Button
                             type="button"
                             onClick={handleUpdateProfile}
-                            className="bg-green-500 text-white"
+                            className="bg-green-500 text-white p-4"
                         >
                             Save
                         </Button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'; // Import Link component
 import CardButton from './CardButton';
 
 interface CardProps {
@@ -9,11 +10,12 @@ interface CardProps {
   firstname: string;
   lastname: string;
   date: string;
+  id: string; // Add ID to props
 }
 
-const Card: React.FC<CardProps> = ({ image,date, image1, firstname, lastname, title, description }) => {
+const Card: React.FC<CardProps> = ({ image, date, image1, firstname, lastname, title, description, id }) => {
   return (
-    <div className="w-full h-[100%] shadow-lg bg-white">
+    <Link href={`/view/${id}`} className="w-full h-[100%] shadow-lg bg-white"> 
       <div className='w-full p-5'>
         <img className="object-cover" src={image} alt={title} />
       </div>
@@ -30,7 +32,7 @@ const Card: React.FC<CardProps> = ({ image,date, image1, firstname, lastname, ti
         </div>
         <div className='flex-1'>
           <h5 className='mt-8'>Author</h5>
-          <div className='flex gap-2 text-blue-600  justify-start'>
+          <div className='flex gap-2 text-blue-600 justify-start'>
             <p>{firstname}</p>
             <p>{lastname}</p>
           </div>
@@ -40,10 +42,8 @@ const Card: React.FC<CardProps> = ({ image,date, image1, firstname, lastname, ti
             <p>{date}</p>
           </div>
         </div>
-        
       </div>
-      
-    </div>
+    </Link>
   );
 };
 
